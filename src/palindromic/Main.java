@@ -33,11 +33,14 @@ public class Main {
 	        for (int q = rangeMax; q > rangeMin; q--)
 	        {
 	            long P = p * q;
-	            if (isPal(P))
-	                if (P > maxP)
-	                {
-	                    maxp = p; maxq = q; maxP = P;
-	                }
+	            if (P % 11 != 0)
+	            	continue;
+	            else
+	            	if (isPal(P))
+	            		if (P > maxP)
+	            		{
+	            			maxp = p; maxq = q; maxP = P;
+	            		}
 	        }
 		System.out.println(maxp + "*" + maxq + "=" + maxP);
 	}
@@ -46,10 +49,9 @@ public class Main {
 	{
 		calcPal(10, 99);
 		calcPal(100, 999);
-		calcPal(9000, 9999);
-		calcPal(99000, 99999);
-		calcPal(990000, 999999);
-
+		calcPal(1000, 9999);
+		calcPal(10000, 99999);
+		calcPal(100000, 999999);
 	}
 
 }
